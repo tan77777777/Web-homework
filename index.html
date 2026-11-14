@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>校园生活网 · 主页</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="logo">🌱</div>
+  <h1>校园生活网</h1>
+</header>
+
+<nav>
+  <a href="index.html" class="active">🏠 主页</a>
+  <a href="news.html">📰 校园资讯</a>
+  <a href="study.html">📚 学习天地</a>
+  <a href="food.html">🍜 校园美食</a>
+  <a href="clubs.html">🎨 社团活动</a>
+  <a href="scenery.html">🌸 校园风光</a>
+  <a href="life.html">💡 生活指南</a>
+</nav>
+
+<main>
+  <h2 class="section-title">本站导航</h2>
+  <div class="cards">
+    <div class="card">
+      <div class="icon">📚</div>
+      <h3>学习天地</h3>
+      <p>图书馆攻略、自习室推荐、学习方法分享，助你高效学习每一天。</p>
+      <a class="btn" href="study.html">进入学习天地 →</a>
+    </div>
+    <div class="card">
+      <div class="icon">🍜</div>
+      <h3>校园美食</h3>
+      <p>食堂窗口测评、人气菜品排行、周边小吃地图，干饭人必看！</p>
+      <a class="btn" href="food.html">进入校园美食 →</a>
+    </div>
+    <div class="card">
+      <div class="icon">🎨</div>
+      <h3>社团活动</h3>
+      <p>全校百余个学生社团完整名录，志愿公益、学术科技、文化体育，总有一款适合你。</p>
+      <a class="btn" href="clubs.html">进入社团活动 →</a>
+    </div>
+    <div class="card">
+      <div class="icon">🌸</div>
+      <h3>校园风光</h3>
+      <p>四季美景、建筑地标、拍照打卡点，发现校园里被忽略的美。</p>
+      <a class="btn" href="scenery.html">进入校园风光 →</a>
+    </div>
+    <div class="card">
+      <div class="icon">💡</div>
+      <h3>生活指南</h3>
+      <p>作息建议、失物招领、校园常用电话，生活大小事一站搞定。</p>
+      <a class="btn" href="life.html">进入生活指南 →</a>
+    </div>
+    <div class="card">
+      <div class="icon">📰</div>
+      <h3>校园资讯</h3>
+      <p>校内要闻、学术动态、通知公告，点击直达校园新闻网，掌握第一手消息。</p>
+      <a class="btn" href="news.html">进入校园资讯 →</a>
+    </div>
+    <div class="card">
+      <div class="icon">🌟</div>
+      <h3>每日一句</h3>
+      <p id="daily-quote">正在加载今日名言……</p>
+    </div>
+  </div>
+</main>
+
+<script>
+// 每日一句：根据日期自动轮换，每天显示不同的名言
+var quotes = [
+  "少年易老学难成，一寸光阴不可轻。——朱熹",
+  "路虽远，行则将至；事虽难，做则必成。——《荀子》",
+  "不积跬步，无以至千里；不积小流，无以成江海。——《荀子》",
+  "知之者不如好之者，好之者不如乐之者。——《论语》",
+  "宝剑锋从磨砺出，梅花香自苦寒来。——《警世贤文》",
+  "业精于勤，荒于嬉；行成于思，毁于随。——韩愈",
+  "书山有路勤为径，学海无涯苦作舟。——韩愈",
+  "长风破浪会有时，直挂云帆济沧海。——李白",
+  "千淘万漉虽辛苦，吹尽狂沙始到金。——刘禹锡",
+  "黑发不知勤学早，白首方悔读书迟。——颜真卿",
+  "纸上得来终觉浅，绝知此事要躬行。——陆游",
+  "问渠那得清如许？为有源头活水来。——朱熹",
+  "盛年不重来，一日难再晨。及时当勉励，岁月不待人。——陶渊明",
+  "天行健，君子以自强不息。——《周易》",
+  "苟日新，日日新，又日新。——《礼记》",
+  "志不求易者成，事不避难者进。——《后汉书》",
+  "非学无以广才，非志无以成学。——诸葛亮",
+  "博观而约取，厚积而薄发。——苏轼",
+  "千磨万击还坚劲，任尔东西南北风。——郑燮",
+  "会当凌绝顶，一览众山小。——杜甫",
+  "不经一番寒彻骨，怎得梅花扑鼻香。——黄蘖禅师",
+  "少壮不努力，老大徒伤悲。——《长歌行》",
+  "学而不思则罔，思而不学则殆。——《论语》",
+  "玉不琢，不成器；人不学，不知道。——《礼记》",
+  "海阔凭鱼跃，天高任鸟飞。——古训",
+  "大鹏一日同风起，扶摇直上九万里。——李白",
+  "天生我材必有用，千金散尽还复来。——李白",
+  "沉舟侧畔千帆过，病树前头万木春。——刘禹锡",
+  "欲穷千里目，更上一层楼。——王之涣",
+  "春风得意马蹄疾，一日看尽长安花。——孟郊",
+  "莫愁前路无知己，天下谁人不识君。——高适"
+];
+var now = new Date();
+var start = new Date(now.getFullYear(), 0, 0);
+var dayOfYear = Math.floor((now - start) / 86400000);
+document.getElementById("daily-quote").textContent = "“" + quotes[dayOfYear % quotes.length] + "”";
+</script>
+
+<footer>
+  🌱 校园生活网 · 用心记录每一天 &nbsp;|&nbsp; 建议使用电脑或手机浏览器访问 &nbsp;|&nbsp; 本站由学生自主维护
+</footer>
+
+</body>
+</html>
